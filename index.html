@@ -8,24 +8,32 @@
     <script src="script.js"></script>
 </head>
 <body>
-
-
-
     <main>
-        <section>
-            
+        <!-- SIDEBAR START -->
+        <section id="sidebarsection">
         </section>
-        <section>
+        <!-- SIDEBAR END -->
+
+        <!-- LIST START -->
+        <section id="listsection">
             <div class="container-list">
                 <p class="listtitle">Liste 1</p>
                 <ul class="list">
-                    <li class="listitem" id="n">Das ist ein Eintrag<input type="submit" class="editBtn" value="Edit"><input class="doneBtn" type="submit" value="Done"></li>
+                    <!-- ADD ITEMS HERE -->
+                    <li class="listitem">
+                        <div class="container-note">                    
+                            <a class="note">NOTE</a>
+                        </div>
+                        <div class="container-button">
+                            <button type="submit" id="edit">EDIT</button>
+                            <button type="submit" id="remove">REMOVE</button>                 
+                        </div>
+                    </li>
                 </ul>
                 <button type="submit" id="add" onclick="hallo()">ADD</button>
-            </div>
+            </div>        
         </section>
+        <!-- LIST END -->
     </main>
-
-
 </body>
 </html>

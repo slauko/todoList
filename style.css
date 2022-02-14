@@ -3,10 +3,15 @@
     padding: 0;
 }
 
-main{
-    
+#sidebarsection{
+
 }
 
+#listsection{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
 .container-list{
     display: flex;
     border: red solid 1px;
