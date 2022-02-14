@@ -1,39 +1,190 @@
+:root{
+
+    font-size: 15px;
+
+}
+
 *{
     margin:0;
     padding: 0;
 }
 
-#sidebarsection{
+h1{
+
+    color: white;
+    width: fit-content;
+
+    margin-left: 40%;
+
+    padding-top: 4rem;
+
+}
+
+body{
+
+    background-image: url("data/kelly-sikkema-5RcSaLT_PrE-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
 
 }
 
 #listsection{
-    margin-top: 50px;
+
+    position: absolute;
+    left: 38rem;
+    top: 14rem;
+
+    border-radius: 1rem;
+
     display: flex;
     justify-content: center;
+
+    width: 38rem;
+    max-height: 50rem;
+
 }
 .container-list{
+
     display: flex;
-    border: red solid 1px;
-    width: 50%;
+    width: 100%;
+    padding: 1rem;
+
+    border: inherit;
+
     flex-direction: column;
+
 }
 .listtitle{
     text-align: center;
 }
 .list{
-    display: flex;
-    list-style-type: none;  
+    display: table;
+
+    overflow-y: auto;
 }
+
+#taskList{
+
+    margin-top: 2rem;
+
+    max-height: 100%;
+
+    overflow-y: auto;
+
+}
+
+.container-note{
+
+    width: 65%;
+
+}
+
+.container-button{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: red;
+
+    width: 10rem;
+
+}
+
+.container-button > button{
+
+    width: 5rem;
+
+    margin: 0;
+
+}
+
 .listitem{
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    margin: 10px
+    width: 35rem;
+    margin: 10px;
 }
-.container-note{
-    display: flex;
+
+button{
+
+    padding: 0.25rem 1rem;
+
+    margin-left: 1rem;
+
+
 }
-.container-button{
+
+#newTask{
+
+    margin-top: 1.5rem;
+    margin-left: 0.5rem;
+
     display: flex;
+    justify-content: space-around;
+
+}
+
+#newtaskTextfield{
+
+    width: 80%;
+
+}
+
+#add{
+
+    width: 15rem;
+
+}
+
+#sidebarsection{
+
+    position: relative;
+    top: -6.25rem;
+
+    width: 25rem;
+    height: 100vh;
+
+
+    background-color: rgb(37, 37, 37);
+
+    color: rgb(204, 204, 204);
+
+}
+
+/*     Sidebar     */
+
+#sidebarBurgerBtn{
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    margin: 1rem;
+
+    background-color: green;
+
+}
+
+#sidebarList{
+
+    margin-top: 3rem;
+
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 3rem;
+
+    margin-left: 2rem;
+
+    list-style-type: none;
+
+}
+
+#burgerBtnDiv{
+
+    display: flex;
+    justify-content: flex-end;
+
 }
