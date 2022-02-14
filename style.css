@@ -1,0 +1,35 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+.main{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    border: red solid 1px;
+    width: 50%;
+    flex-direction: column;
+}
+.listtitle{
+    text-align: center;
+}
+.list{
+    display: flex;
+    list-style-type: none;  
+}
+.listitem{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px
+}
+.notecontainer{
+    display: flex;
+}
+.buttoncontainer{
+    display: flex;
+}
