@@ -22,9 +22,9 @@ h1{
 
 body{
 
-    background-image: url("data/kelly-sikkema-5RcSaLT_PrE-unsplash.jpg");
+    background-image: url("data/bgTable.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     background-position: center;
 
     overflow: hidden;
@@ -34,16 +34,24 @@ body{
 #listsection{
 
     position: absolute;
-    left: 38rem;
-    top: 14rem;
+    left: 30%;
+    top: 6%;
 
     border-radius: 1rem;
 
     display: flex;
     justify-content: center;
 
-    width: 38rem;
-    max-height: 50rem;
+    min-width: 37rem;
+    max-width: 37rem;
+    min-height: 53rem;
+    max-height: 53rem;
+    padding: 2.5rem;
+
+    background-image: url("data/tablet.png");
+    background-size: 300%;
+    background-position-x: 42%;
+    background-position-y: 55%;
 
 }
 .container-list{
@@ -186,5 +194,39 @@ button{
 
     display: flex;
     justify-content: flex-end;
+
+}
+
+/************************/
+/*      LISTITEMS       */
+/************************/
+
+.taskItem{
+
+    display: flex;
+    align-items: center;
+
+    padding: 1rem 0;
+
+}
+
+.liCheckbox{
+
+    margin: 0 0.5rem;
+
+}
+
+.liParagraph{
+
+    width: 70%;
+
+}
+
+.liButton{
+
+    width: 10%;
+    height: 2rem;
+
+    margin: 0 0.25rem;
 
 }
