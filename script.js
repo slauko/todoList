@@ -3,9 +3,10 @@ let listNumber = 0;
 
 class taskItem {
     constructor(message, id){
-        this.edit = false;
-        this.done = false;
-        this.index = id;
+        this.edit   = false;
+        this.done   = false;
+        this.delete = false;
+        this.index  = id;
         
         let li = document.createElement("li");
         li.className = "taskItem";
@@ -48,14 +49,8 @@ class taskItem {
         done.className = "liDone liButton";
         done.value     = "";
         done.addEventListener("click", () =>{
-            console.log(`doneButton ${this.index} clicked`)
-            let para = this.item.querySelectorAll("p")[0];
-            this.done = !this.done;
-            if (this.done) {
-                para.style.textDecoration = "line-through";       
-            }else{
-                para.style.textDecoration = "none";
-            }
+            this.delete = true;
+            updateTaskList_JS();
         });
 
         li.appendChild(check);
@@ -76,6 +71,7 @@ const updateTaskList_JS = () =>{
         }
     });
     taskList = updated;
+    updateTaskList_HTML();
 }
 
 const updateTaskList_HTML = () => {
