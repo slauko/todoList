@@ -126,7 +126,7 @@ h1{
 
 }
 
-.listitem{
+.taskItem{
 
     display: flex;
     justify-content: space-between;
@@ -209,7 +209,8 @@ h1{
 .liParagraph{
 
     width: 70%;
-
+    hyphens: auto;
+    word-wrap: break-word
 }
 
 .liButton{
