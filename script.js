@@ -15,6 +15,15 @@ class taskItem {
         check.id        = id;
         check.type      = "checkbox";
         check.className = "liCheckbox";
+        check.addEventListener("change",(event) => {
+            this.done = event.target.checked;
+            let para = this.item.querySelectorAll("p")[0];
+            if (this.done) {
+                para.style.textDecoration = "line-through";
+            }else{
+                para.style.textDecoration = "";
+            }
+        });
 
         let para = document.createElement("p");
         para.className = "liParagraph";
@@ -25,29 +34,20 @@ class taskItem {
                 para.contentEditable = this.edit;
             }
         });
-        para.addEventListener("mousedown", (event) => {
+        para.addEventListener("mousedown", () => {
             console.log(`editButton ${this.index} clicked`)
             let para = this.item.querySelectorAll("p")[0];
-            this.edit = !this.edit;
-            para.contentEditable = this.edit;
-        });
-        let edit = document.createElement("input");
-        edit.id        = id;
-        edit.type      = "submit";
-        edit.className = "liEdit liButton";
-        edit.value     = "";
-        edit.addEventListener("click", () => {
-            console.log(`editButton ${this.index} clicked`)
-            let para = this.item.querySelectorAll("p")[0];
-            this.edit = !this.edit;
-            para.contentEditable = this.edit;
+            if (!this.edit) {
+                this.edit = !this.edit;
+                para.contentEditable = this.edit;           
+            }
         });
 
         let done = document.createElement("input");
         done.id        = id;
         done.type      = "submit";
         done.className = "liDone liButton";
-        done.value     = "";
+        done.value     = ""; //FONTAWESOME TEXT HERE !
         done.addEventListener("click", () =>{
             this.delete = true;
             updateTaskList_JS();
@@ -55,7 +55,6 @@ class taskItem {
 
         li.appendChild(check);
         li.appendChild(para);
-        li.appendChild(edit);
         li.appendChild(done);
 
         this.item = li;
@@ -96,7 +95,16 @@ const addNewTask = () => {
         taskList[taskList.length] = new taskItem(message, taskList.length); 
     }
     updateTaskList_HTML();
+
+    document.querySelector("#newtaskTextfield").value = "";
 }
+
+document.querySelector("#add").addEventListener("click", addNewTask);
+document.querySelector("#newtaskTextfield").addEventListener("keydown", (event) => {
+    if (event.code === "Enter") {
+        addNewTask();
+    }
+});
 
 const saveCurrentList = () => {
     //let cookie[listNumber] = taskList; //TODO: cookie saving here ?
