@@ -145,7 +145,7 @@ h1{
     position: relative;
     top: -6.25rem;
 
-    width: 25rem;
+    width: 4.5rem;       /*  25rem extended | 4.5rem rectracted  */
     height: 100vh;
 
 
@@ -167,6 +167,8 @@ h1{
 }
 
 #sidebarList{
+
+    display: none;
 
     margin-top: 3rem;
 
