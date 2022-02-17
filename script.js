@@ -82,6 +82,8 @@ class taskItem {
         li.appendChild(done);
 
         this.item = li;
+
+        console.log("-------------------------------------------------",this)
     }
 }
 

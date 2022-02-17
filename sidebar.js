@@ -8,7 +8,7 @@ sidebarAddListBtn.addEventListener("click", addNewList);
 sidebarAddListText.addEventListener("keyup", (e) => e.key === "Enter" ? addNewList : null);
 sidebarDeleteBtn.addEventListener("click", deleteListItem);
 
-let listArray = [];
+let counter = 0;
 
 
 
@@ -79,10 +79,6 @@ function addNewList(e){
 
         listName.value = "";                                                    //textfeld zurücksetzen
 
-        listArray.push(newLi);
-
-        console.table(listArray)
-
     }
 
 }
@@ -92,26 +88,27 @@ function createNewLi(listName){
     const newItem = document.createElement("li");
     newItem.className = "sidebarListItem";
     newItem.innerText = listName;
+    newItem.id = `ListItem${counter}`;
+
+    counter++;
 
     return newItem;
 
 }
 
 
-function deleteListItem(e){
+function deleteListItem(){
 
-    const sidebarList = document.querySelector("#sidebarList").addEventListener("click", (e) => {
+    const list = document.querySelector("#sidebarList");
 
-        for(let i = 0; i < listArray.length; i++){
-            if(listArray[i.innerText] === e.target.innerText){
-                listArray.splice(i-1, 1);
-                console.log(listArray)
-                console.log(2)
-            }
-        }
+    list.addEventListener("click", (e) => {
 
-        
+        document.querySelector("#" + e.target.id).remove();
+
+        return null;
 
     })
+
+    return null;
 
 }
