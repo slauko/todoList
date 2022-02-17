@@ -10,14 +10,18 @@ class taskItem {
         this.edit   = false;
         this.delete = false;
 
+        //Add new list element in HTML
         let li = document.createElement("li");
         li.className = "taskItem";
 
+        //Add new HTML input element
         let check = document.createElement("input");
         check.id        = this.index;
         check.type      = "checkbox";
         check.checked   = this.done;
         check.className = "liCheckbox";
+
+        //Add even listener when checkbox gets checked or unchecked(mark text with line through)
         check.addEventListener("change",(event) => {
             this.done = event.target.checked;
             let para = this.item.querySelectorAll("p")[0];
@@ -29,20 +33,15 @@ class taskItem {
             updateTaskList_JS();
         });
 
+        //add the text paragraph of the task
         let para = document.createElement("p");
         para.className = "liParagraph";
         para.textContent = this.message;
         if (this.done) {
             para.style.textDecoration = "line-through";
         } 
-        para.addEventListener("keydown", (event) => {
-            if (event.code === "Enter") {
-                this.edit = false;
-                para.contentEditable = this.edit;
-                this.message = para.textContent;
-                updateTaskList_JS();
-            }
-        });
+
+        //Add event listener for changing/edit the text with a click, make the text editable when clicked
         para.addEventListener("mousedown", () => {
             console.log(`editButton ${this.index} clicked`)
             let para = this.item.querySelectorAll("p")[0];
@@ -53,16 +52,31 @@ class taskItem {
             }
         });
 
+        //Add event listener to exit the edit mode when user pressed enter, make the text not editable again
+        para.addEventListener("keydown", (event) => {
+            if (event.code === "Enter") {
+                this.edit = false;
+                para.contentEditable = this.edit;
+                this.message = para.textContent;
+                updateTaskList_JS();
+            }
+        });
+
+
+        //Add the delete/done button in HTML
         let done = document.createElement("input");
         done.id        = id;
         done.type      = "submit";
         done.className = "liDone liButton";
         done.value     = ""; //FONTAWESOME TEXT HERE !
+
+        //Add event listener when delete/done buton clicked, set delete true and update the list
         done.addEventListener("click", () =>{
             this.delete = true;
             updateTaskList_JS();
         });
 
+        //Add the differnet HTML under/child elements to the list element 
         li.appendChild(check);
         li.appendChild(para);
         li.appendChild(done);
@@ -74,6 +88,7 @@ class taskItem {
 }
 
 const updateTaskList_JS = () =>{
+    //Check for tasks marked as delete and delete them from current list .. then save the list in storage and reload HTML    
     let updated = [];
     taskList.forEach(task => {
         if (task.delete === false) {
@@ -88,6 +103,8 @@ const updateTaskList_JS = () =>{
 }
 
 const updateTaskList_HTML = () => {
+    //Reload/update the current HTML/Page
+
     console.log("---------------")
     let list = document.querySelector("#tasklist .list")
 
