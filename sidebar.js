@@ -63,6 +63,7 @@ function hideSidebarContent(hide){
 
 function addNewList(e){
 
+    const amountOfLi = document.querySelectorAll(".sidebarListItem").length;    //Wieviele Li sind vorhanden?
     const listName = document.querySelector("#newListText");                    //Text aus dem input lesen
     const list = document.querySelector("#sidebarList");
 
