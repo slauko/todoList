@@ -126,9 +126,11 @@ const saveCurrentList = () => {
 const loadSavedList = () => {
     let updated = [];
     let loaded  = JSON.parse(window.localStorage.getItem("taskList"));
-    loaded.forEach(task => {
-        updated[updated.length] = new taskItem(task.message, task.index, task.done);
-    });
+    if (loaded) {
+        loaded.forEach(task => {
+            updated[updated.length] = new taskItem(task.message, task.index, task.done);
+        });     
+    }
     taskList = updated;
     updateTaskList_JS();
 }
