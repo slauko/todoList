@@ -6,7 +6,11 @@ const sidebarDeleteBtn = document.querySelector("#sidebarDeleteBtn");
 sidebarBurgerBtn.addEventListener("click", changeWidth);
 sidebarAddListBtn.addEventListener("click", addNewList);
 sidebarAddListText.addEventListener("keyup", (e) => e.key === "Enter" ? addNewList : null);
-sidebarDeleteBtn.addEventListener("click", () => deleteBoolean = true);
+
+sidebarDeleteBtn.addEventListener("click", () => {
+    deleteBoolean = true;
+    document.querySelector("#sidebarList").style.textDecoration = "line-through";
+});
 
 let counter = 0;
 let deleteBoolean = false;
@@ -16,6 +20,7 @@ document.querySelector("#sidebarList").addEventListener("click", (e) => {
     if(deleteBoolean){
         document.querySelector("#" + e.target.id).remove();
         deleteBoolean = false;
+        document.querySelector("#sidebarList").style.textDecoration = "none";
     }
 
     return;
