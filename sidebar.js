@@ -6,11 +6,21 @@ const sidebarDeleteBtn = document.querySelector("#sidebarDeleteBtn");
 sidebarBurgerBtn.addEventListener("click", changeWidth);
 sidebarAddListBtn.addEventListener("click", addNewList);
 sidebarAddListText.addEventListener("keyup", (e) => e.key === "Enter" ? addNewList : null);
-sidebarDeleteBtn.addEventListener("click", deleteListItem);
+sidebarDeleteBtn.addEventListener("click", () => deleteBoolean = true);
 
 let counter = 0;
+let deleteBoolean = false;
 
+document.querySelector("#sidebarList").addEventListener("click", (e) => {
 
+    if(deleteBoolean){
+        document.querySelector("#" + e.target.id).remove();
+        deleteBoolean = false;
+    }
+
+    return;
+
+})
 
 function changeWidth(e){
 
@@ -93,22 +103,5 @@ function createNewLi(listName){
     counter++;
 
     return newItem;
-
-}
-
-
-function deleteListItem(){
-
-    const list = document.querySelector("#sidebarList");
-
-    list.addEventListener("click", (e) => {
-
-        document.querySelector("#" + e.target.id).remove();
-
-        return null;
-
-    })
-
-    return null;
 
 }
