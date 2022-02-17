@@ -121,13 +121,7 @@ h1 {
   width: 4.5rem; /*  25rem extended | 4.5rem rectracted  */
   height: 100vh;
 
-    width: 4.5rem;       /*  25rem extended | 4.5rem rectracted  */
-    height: 100vh;
-
-
-    background-color: rgb(37, 37, 37);
-
-    color: rgb(204, 204, 204);
+  background-color: rgb(37, 37, 37);
 
   color: rgb(204, 204, 204);
 }
@@ -141,34 +135,15 @@ h1 {
   background-color: green;
 }
 
-#burgerBtnDiv{
-
-    display: flex;
-    justify-content: flex-end;
-
+#burgerBtnDiv {
+  display: flex;
+  justify-content: flex-end;
 }
 
-#sidebarContent{
+#sidebarContent {
+  display: none;
 
-    display: none;
-
-    margin-top: 3rem;
-
-    font-size: 2rem;
-    font-weight: bold;
-    line-height: 3rem;
-
-    margin-left: 2rem;
-
-    list-style-type: none;
-
-}
-
-#sidebarContent > input{
-
-    padding: 0.25rem;
-
-    margin-bottom: 1rem;
+  margin-top: 3rem;
 
   font-size: 2rem;
   font-weight: bold;
@@ -199,28 +174,6 @@ h1 {
 .sidebarListItem:hover {
   letter-spacing: 0.2rem;
 }
-
-#sidebarContent > ul{
-
-    margin-left: 3rem;
-    list-style-type: none;
-
-}
-
-.sidebarListItem{
-
-    transition: 250ms;
-
-    cursor: pointer;
-
-}
-
-.sidebarListItem:hover{
-
-    letter-spacing: 0.2rem;
-
-}
-
 
 /************************/
 /*      LISTITEMS       */
