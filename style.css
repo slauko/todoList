@@ -166,7 +166,14 @@ h1{
 
 }
 
-#sidebarList{
+#burgerBtnDiv{
+
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+#sidebarContent{
 
     display: none;
 
@@ -182,12 +189,35 @@ h1{
 
 }
 
-#burgerBtnDiv{
+#sidebarContent > input{
 
-    display: flex;
-    justify-content: flex-end;
+    padding: 0.25rem;
+
+    margin-bottom: 1rem;
 
 }
+
+#sidebarContent > ul{
+
+    margin-left: 3rem;
+    list-style-type: none;
+
+}
+
+.sidebarListItem{
+
+    transition: 250ms;
+
+    cursor: pointer;
+
+}
+
+.sidebarListItem:hover{
+
+    letter-spacing: 0.2rem;
+
+}
+
 
 /************************/
 /*      LISTITEMS       */
